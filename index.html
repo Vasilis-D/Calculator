@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <style>
+     
+
+
+
+    </style>
+    <!-- My h2 header -->
+    <h2>Calculator</h2><br>
+
+    <!-- div container for all the inputs -->
+    
+    <div class="container">
+    <input type="number" id="number1" style="margin-bottom: 5px;" placeholder="Number1"><br>
+    <input type="number" id="number2" style="margin-bottom: 5px;" placeholder="Number2"><br>
+    <input type="number" id="number3" style="margin-bottom: 5px;" placeholder="Number3"><br>
+    <input type="number" id="Total"   style="margin-bottom: 5px;" placeholder="Total" readonly><br>
+    </div>
+    
+    <!-- Div border for all the buttons -->
+    <div class="border">
+        <button onclick="calculate('+')" id="add" style="background-color: orange;" >+</button>
+        <button onclick="calculate('-')" id="subtract" style="background-color: orange;">-</button>
+        <button onclick="calculate('*')" id="multiply" style="background-color: orange;">x</button>
+        <button onclick="calculate('/')" id="divide" style="background-color: orange;">÷</button>
+    </div>
+
+    <!-- Function section (Javascript) -->
+    <script>
+           function calculate(operation) {
+        
+           var number1 = Number(document.getElementById("number1").value);
+           var number2 = Number(document.getElementById("number2").value);
+           var number3 = Number(document.getElementById("number3").value);
+           var result;
+
+           switch(operation) {
+            case '+':
+                result = number1 + number2 + number3;
+            break;
+            case '-':
+                 result = number1 - number2 - number3;
+                break;
+            case '*':
+                result = number1 * number2 * number3;
+                break;
+            case '/':
+                result = number1 / number2 / number3;
+                break;
+            default:
+                result = "Invalid operation";  
+                
+           }
+
+           document.getElementById("Total").value =result;
+        }
+           
+    </script>
+
+
+   
+</body>
+</html>
